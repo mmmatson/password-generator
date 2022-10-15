@@ -11,7 +11,7 @@ function writePassword() {
     // Generate password button executes prompt about password length
     var length = prompt("How many characters do you want in your password?");
     
-    //Loop prompt to enter different length if password entered is less than 8 or greater than 128.
+    //Loop prompt to enter different length if response entered is less than 8 or greater than 128.
     while (length <8 || length >128) {
     var length = prompt("Your password must be 8-128 characters. Please enter a different number.");
     }
