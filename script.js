@@ -1,3 +1,8 @@
+// Define character type variables
+var symbols = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~/";
+var numbers = "1234567890";
+var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
