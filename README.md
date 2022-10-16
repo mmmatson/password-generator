@@ -22,4 +22,4 @@ Click the "Generate Password" button, then input your desired password length in
 
 ## License
 
-No License.
+MIT License. See repository for license information.
