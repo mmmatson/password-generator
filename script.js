@@ -25,9 +25,9 @@ function writePassword() {
   // Generate password button executes prompt about password length
   length = prompt("How many characters do you want in your password?");
 
-  //Loop prompt to enter different length if response entered is less than 8 or greater than 128.
-  while (length < 8 || length > 128) {
-    length = prompt("Your password must be 8-128 characters. Please enter a different number.");
+  //Loop prompt to enter number between 8-128 for length if response is not a number or less than 8 or greater than 128.
+  while (isNaN(length) || length < 8 || length > 128) {
+    length = prompt("Your password length must be 8-128 characters. Please enter a number between 8 and 128.");
   }
 
   //If password length entered between 8 and 128, confirm password criteria
