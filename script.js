@@ -1,8 +1,8 @@
 // Define character type arrays
-var symbols = [' ','"','!','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@',']','[','^','_','`','{','|','}','~','/',];
-var numbers = ['0','1','2','3','4','5','6','7','8','9',];
-var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
-var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',];
+var symbols = [' ','"','!','#','$','%','&','(',')','*','+',',','-','.','/',':',';','<','=','>','?','@',']','[','^','_','`','{','|','}','~','/'];
+var numbers = ['0','1','2','3','4','5','6','7','8','9'];
+var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -26,7 +26,7 @@ function writePassword() {
     }
 
     //Loop to confirm password criteria if no character types selected
-    while (!incSymbols && !incNumbers && !lowercase && !uppercase) {
+    while (!incSymbols && !incNumbers && !incLowercase && !incUppercase) {
     var incSymbols = confirm("You must confirm at least one character type. Do you want symbols in your password?");
     var incNumbers = confirm("You must confirm at least one character type. Do you want numbers in your password?");
     var incLowercase = confirm("You must confirm at least one character type. Do you want lowercase letters in your password?");
@@ -35,28 +35,28 @@ function writePassword() {
 
     //Declare generate password function
       function generatePassword () {
-        //Declare variable as empty
-        var characters = "";
+        //Declare array as empty
+        var characters = [];
 
-        //If condition evaluates as true, include symbols/special characters in password characters
+        //If condition evaluates as true, add symbols/special characters array to the password characters array
         if (incSymbols) {
-          characters += symbols;
+          characters.push(symbols);
         }
-        //If condition evaluates as true, include numbers in password characters
+        //If condition evaluates as true, add numbers array to the password characters array
         if (incNumbers) {
-          characters += numbers;
+          characters.push(numbers);
         }
-        //If condition evaluates as true, include uppercase letters in password characters
+        //If condition evaluates as true, add uppercase letters array to the password characters array
         if (incUppercase) {
-          characters += uppercase;
+          characters.push(uppercase);
         }
-        //If condition evaluates as true, include lowercase letters in password characters
+        //If condition evaluates as true, add lowercase letters array to the password characters array
         if (incLowercase) {
-          characters += lowercase;
+          characters.push(lowercase);
         }    
  
-        //Check/test that character variable is being created correctly based on conditions
-        console.log(characters);
+        //Check/test that character array is being created correctly based on conditions
+        console.log(characters);          
       }
 
       var password = generatePassword();
