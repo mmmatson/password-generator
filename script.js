@@ -4,6 +4,18 @@ var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 var uppercase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lowercase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
+//Get a random character from each array
+var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+var randomUppercase = uppercase[Math.floor(Math.random() * uppercase.length)];
+var randomLowercase = lowercase[Math.floor(Math.random() * lowercase.length)];
+
+//Test or check getting random character from each array
+console.log(randomSymbol);
+console.log(randomNumber);
+console.log(randomUppercase);
+console.log(randomLowercase);
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -37,6 +49,11 @@ function writePassword() {
       function generatePassword () {
         //Declare array as empty
         var characters = [];
+        
+        //Use loop to select characters for password based on length 
+        for (i = 0; i < length; i++) {
+
+        }
 
         //If condition evaluates as true, add symbols/special characters array to the password characters array
         if (incSymbols) {
@@ -54,9 +71,15 @@ function writePassword() {
         if (incLowercase) {
           characters.push(lowercase);
         }    
- 
+      
         //Check/test that character array is being created correctly based on conditions
-        console.log(characters);          
+        console.log(characters); 
+        
+        //Get a random array from character array - need to figure out how to select random characters from arrays
+        var randomCharacter = characters[Math.floor(Math.random() * characters.length)]; 
+      
+        //check/test that random array is being selected
+        console.log(randomCharacter);
       }
 
       var password = generatePassword();
