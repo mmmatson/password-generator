@@ -11,7 +11,7 @@ var incNumbers;
 var incLowercase;
 var incUppercase;
 
-//Get a random character from each array
+//Declare variables to get a random character from each array
 var randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
 var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
 var randomUppercase = uppercase[Math.floor(Math.random() * uppercase.length)];
@@ -56,26 +56,51 @@ function generatePassword() {
   var characters = [];
   //Declare random password variable as empty
   var randomPassword = "";
+  //Declare count included variable to track number of true conditions and subtract from length in for loop
+  var countInc = 0;
 
-  //If condition evaluates as true, add symbols/special characters to the password characters array
+  //If condition evaluates as true
   if (incSymbols) {
+    //Add symbols to characters array
     characters = characters.concat(symbols);
-  }
-  //If condition evaluates as true, add numbers to the password characters array
-  if (incNumbers) {
-    characters = characters.concat(numbers);
-  }
-  //If condition evaluates as true, add uppercase letters to the password characters array
-  if (incUppercase) {
-    characters = characters.concat(uppercase);
-  }
-  //If condition evaluates as true, add lowercase letters to the password characters array
-  if (incLowercase) {
-    characters = characters.concat(lowercase);
+    //Add random symbol to password (for edge cases where symbol not selected as random character)
+    randomPassword += randomSymbol;
+    //Account for random symbol added to password (will subtract from length in for loop)
+    countInc += 1;
   }
 
-  //Use loop to select characters for password based on length 
-  for (i = 0; i < length; i++) {
+  //If condition evaluates as true
+  if (incNumbers) {
+    //Add numbers to characters array
+    characters = characters.concat(numbers);
+    //Add random number to password (for edge cases where number not selected as random character)
+    randomPassword += randomNumber;
+    //Account for random number added to password (will subtract from length in for loop)
+    countInc += 1;
+  }
+
+  //If condition evaluates as true
+  if (incUppercase) {
+    //Add uppercase letters to characters array
+    characters = characters.concat(uppercase);
+    //Add random uppercase letter to password (for edge cases where uppercase letter not selected as random character)
+    randomPassword += randomUppercase;
+    //Account for random uppercase letter added to password (will subtract from length in for loop)
+    countInc += 1;
+  }
+
+  //If condition evaluates as true
+  if (incLowercase) {
+    //Add lowercase letters to characters array
+    characters = characters.concat(lowercase);
+    //Add random lowercase letter to password (for edge cases where lowercase letter not selected as random character)
+    randomPassword += randomLowercase;
+    //Account for random lowercase letter added to password (will subtract from length in for loop)
+    countInc += 1;
+  }
+
+  //Use loop to select characters for password based on length minus number of random symbols, numbers, uppercase, and lowercase characters already added
+  for (i = 0; i < length - countInc; i++) {
     //Select random characters from characters variable
     var randomCharacter = characters[Math.floor(Math.random() * characters.length)];
     //Generate random password from random characters
