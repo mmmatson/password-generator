@@ -54,6 +54,8 @@ function writePassword() {
 function generatePassword() {
   //Declare array as empty
   var characters = [];
+  //Declare random password variable as empty
+  var randomPassword = "";
 
   //If condition evaluates as true, add symbols/special characters to the password characters array
   if (incSymbols) {
@@ -74,6 +76,10 @@ function generatePassword() {
 
   //Use loop to select characters for password based on length 
   for (i = 0; i < length; i++) {
+    //Select random characters from characters variable
+    var randomCharacter = characters[Math.floor(Math.random() * characters.length)];
+    //Generate random password from random characters
+    randomPassword += randomCharacter;
   }
 
   var passwordText = document.querySelector("#password");
